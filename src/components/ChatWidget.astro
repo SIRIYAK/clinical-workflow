@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			<button id="chat-close" class="close-btn">&times;</button>
 		</header>
 		<div id="chat-messages" class="chat-messages">
-			<div class="message ai">Hi! I'm Siriyak's AI assistant. I've read his resume and project framework. How can I help you today?</div>
+			<div class="message ai">Hi! I'm Siriyak's AI assistant. I've read the resume and project framework. How can I help you today?</div>
 		</div>
 		<form id="chat-input-form" class="chat-input">
 			<input type="text" id="chat-input" placeholder="Ask about experience, skills..." autocomplete="off" />
@@ -46,7 +46,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 	- ELI LILLY (2021-2023): Associate Manager (Automated global reporting, RBM).
 	- IQVIA (2020-2021): Clinical Data Analyst (R Shiny automation, Bayesian models).
 	
-	Be professional, concise, and helpful. If asked something outside his professional scope, politely steer back.
+	Be professional, concise, and helpful. If asked something outside this professional scope, politely steer back.
 	`;
 
 	const chatToggle = document.getElementById('chat-toggle');
@@ -81,10 +81,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			const response = await result.response;
 			addMessage('ai', response.text());
 		} catch (error) {
-			console.error(error);
-			addMessage('ai', 'Sorry, I encountered an error. Please try again later.');
+			console.error('Gemini API Error:', error);
+			addMessage('ai', `Error: ${error.message || 'Unknown error occurred. Please check console.'}`);
 		}
 	}
+
+	console.log('ChatWidget initialized. API Key present:', !!API_KEY);
 
 	function addMessage(sender, text) {
 		const msgDiv = document.createElement('div');

@@ -1,5 +1,6 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import BotMascot from '../assets/bot-mascot.png';
 import Layout from '../layouts/BlogPost.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
@@ -12,6 +13,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 >
 	<div class="about-container">
 		<header class="header-section">
+			<div class="mascot-wrapper">
+				<img src={BotMascot.src} alt="AI Agent Mascot" class="bot-icon" />
+			</div>
 			<h1>Siriyak CR</h1>
 			<p class="subtitle">AI-Augmented Biostatistician & Clinical Data Automation Specialist</p>
 			<div class="header-pills">
@@ -23,8 +27,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 		<section class="intro">
 			<p>
-				As an <strong>AI-Augmented Biostatistician</strong>, I don't just analyze data; I build the <strong>intelligent infrastructure</strong> that processes it. 
-				Over the last 8 years, I've transitioned from manual statistical programming to architecting <strong>multi-agent AI systems</strong> that automate 80%+ of the clinical trial reporting lifecycle.
+				As an <strong>AI-Augmented Biostatistician</strong>, I build <strong>intelligent infrastructure</strong> to automate clinical reporting. 
+				My workflow is an inter-linked ecosystem involving <strong>Agentic AI</strong>, <strong>Pharmaverse-based automation</strong>, and <strong>Deep Oncology Biostatistics</strong>.
 			</p>
 		</section>
 
@@ -32,54 +36,49 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 		<section class="knowledge-section">
 			<div class="section-title">
 				<h2>Inter-linked Knowledge Ecosystem</h2>
-				<p>Hover over the nodes to see how AI, Statistics, and Data Management collaborate.</p>
+				<p>Hover over the nodes to explore the clinical automation lifecycle.</p>
 			</div>
 			
 			<div class="knowledge-graph">
 				<div class="graph-ui">
 					<svg viewBox="0 0 800 500" class="interactive-svg" id="knowledge-graph-svg">
-						<!-- Links with IDs for highlighting -->
+						<!-- Links -->
 						<g class="links">
-							<!-- Data to Automation -->
 							<path d="M 150 250 Q 300 150 400 250" class="link-path" data-node="node-data node-auto" id="link-data-auto" />
-							<!-- AI to Automation -->
 							<path d="M 400 100 Q 400 175 400 250" class="link-path" data-node="node-ai node-auto" id="link-ai-auto" />
-							<!-- Stats to Automation -->
 							<path d="M 650 250 Q 500 150 400 250" class="link-path" data-node="node-stats node-auto" id="link-stats-auto" />
-							<!-- Automation to Regulatory -->
 							<path d="M 400 250 Q 400 375 400 450" class="link-path" data-node="node-auto node-reg" id="link-auto-reg" />
-							<!-- Stats to RWE -->
 							<path d="M 650 250 Q 650 350 550 400" class="link-path" data-node="node-stats node-rwe" id="link-stats-rwe" />
 						</g>
 
 						<!-- Nodes -->
 						<g class="nodes">
 							<!-- AI Hub (Top) -->
-							<g class="node-item" id="node-ai" data-desc="AI Agents (Gemini/Antigravity) act as the 'Orchestrator', driving the logic for code generation and autonomous validation.">
+							<g class="node-item" id="node-ai" data-desc="AI Agents (Antigravity/Gemini) drive the logic for code generation and RECIST 1.1 automation.">
 								<circle cx="400" cy="100" r="40" class="node-circle core" />
-								<text x="400" y="105" text-anchor="middle">AI Agents</text>
+								<text x="400" y="105" text-anchor="middle" style="fill: #fcd34d">Agentic AI</text>
 							</g>
 
 							<!-- Data Hub (Left) -->
-							<g class="node-item" id="node-data" data-desc="Clinical Data (EDC/RWE) is the raw material. I automate its ingestion and cleaning using CQL and R.">
+							<g class="node-item" id="node-data" data-desc="Clinical Data (EDC/RWE/CDB) ingestion and cleaning automated via R and Python.">
 								<circle cx="150" cy="250" r="35" class="node-circle" />
 								<text x="150" y="255" text-anchor="middle">Clinical Data</text>
 							</g>
 
 							<!-- Automation Engine (Center) -->
-							<g class="node-item" id="node-auto" data-desc="The Automation Pipeline (53+ R scripts) is where data meets logic to produce SDTM, ADaM, and TLFs.">
+							<g class="node-item" id="node-auto" data-desc="The Automation Pipeline (53+ R scripts) generating SDTM, ADaM, and ICH E3 TLFs.">
 								<circle cx="400" cy="250" r="50" class="node-circle engine" />
 								<text x="400" y="255" text-anchor="middle">Automation</text>
 							</g>
 
 							<!-- Stats Hub (Right) -->
-							<g class="node-item" id="node-stats" data-desc="Biostatistics (Oncology/Survival) provides the mathematical soul, from KM curves to RECIST evaluation.">
+							<g class="node-item" id="node-stats" data-desc="Advanced Biostatistics including Survival Analysis (RWPFS/RWOS) and Bayesian RBM.">
 								<circle cx="650" cy="250" r="35" class="node-circle" />
 								<text x="650" y="255" text-anchor="middle">Biostatistics</text>
 							</g>
 
 							<!-- Regulatory (Bottom) -->
-							<g class="node-item" id="node-reg" data-desc="Regulatory Submission is the final output—validated XPT/RTF files compliant with FDA/EMA standards.">
+							<g class="node-item" id="node-reg" data-desc="Regulatory Submission Ready: Validated XPT/RTF files for FDA/EMA/PMDA.">
 								<circle cx="400" cy="450" r="35" class="node-circle goal" />
 								<text x="400" y="455" text-anchor="middle">Submission</text>
 							</g>
@@ -87,34 +86,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 					</svg>
 
 					<div class="linkage-info" id="linkage-info-box">
-						<h3>Inter-linkage Detail</h3>
-						<p id="linkage-desc">Hover over a node to explore the clinical automation ecosystem.</p>
+						<h3>Knowledge Linkage Detail</h3>
+						<p id="linkage-desc">Hover over a node to see how each part connects to the submission goal.</p>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<div class="achievement-banner ai-glow">
-			<h2>95% Automation Framework</h2>
-			<p>A production-ready pipeline transforming <strong>Raw SAS data</strong> into <strong>Regulatory submission packages</strong> in record time.</p>
-		</div>
-
-		<section class="grid-expertise">
-			<div class="expertise-card">
-				<h3>Intelligence Stack</h3>
-				<ul>
-					<li><strong>GenAI Agents:</strong> Gemini (Antigravity), Claude Sonnet, GPT-4</li>
-					<li><strong>Flows:</strong> Multi-Agent Orchestration, LLM Code Generation</li>
-					<li><strong>Quality:</strong> Autonomous Validation, RECIST 1.1 Automation</li>
-				</ul>
-			</div>
-			<div class="expertise-card">
-				<h3>Biostatistician Expertise</h3>
-				<ul>
-					<li><strong>Methods:</strong> Survival Analysis, Bayesian RBM, Machine Learning</li>
-					<li><strong>Therapeutic:</strong> Oncology, Neuroscience, Autoimmune</li>
-					<li><strong>Compliance:</strong> CDISC (SDTM/ADaM), ICH E3, FDA 21 CFR 11</li>
-				</ul>
 			</div>
 		</section>
 
@@ -126,21 +101,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 						<span class="company">KLiNERA</span>
 						<span class="date">2024 – Present</span>
 					</div>
-					<p>Biostatistician / Lead Clinical Database Programmer. Managing Veeva EDC automation and Oncology publication data.</p>
+					<p>Lead Clinical Database Programmer. Managing Veeva EDC automation and statistical reporting.</p>
 				</div>
 				<div class="timeline-item">
 					<div class="time-header">
 						<span class="company">CONCERTAi</span>
 						<span class="date">2023 – 2024</span>
 					</div>
-					<p>Senior Statistical Analyst. Led biostatistics teams for Phase IV survival outcomes and RWE integration.</p>
+					<p>Senior Statistical Analyst. Lead for Phase IV life-sciences data and AI-based classification.</p>
 				</div>
 				<div class="timeline-item">
 					<div class="time-header">
 						<span class="company">ELI LILLY AND COMPANY</span>
 						<span class="date">2021 – 2023</span>
 					</div>
-					<p>Associate Manager. Automated global reporting from ADaM/SDTM datasets using R and Power BI.</p>
+					<p>Associate Manager. Automated global clinical trial reporting and developed Bayesian RBM models.</p>
 				</div>
 			</div>
 		</section>
@@ -168,18 +143,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			node.addEventListener('mouseenter', () => {
 				const nodeId = node.id;
 				const desc = node.getAttribute('data-desc');
-				
-				// Highlight description
 				descBox.textContent = desc;
 				descBox.classList.add('highlight');
 
-				// Highlight links
 				paths.forEach(path => {
 					const linkedNodes = path.getAttribute('data-node').split(' ');
 					if (linkedNodes.includes(nodeId)) {
 						path.classList.add('active');
 					} else {
-						path.style.opacity = '0.1';
+						path.style.opacity = '0.05';
 					}
 				});
 			});
@@ -201,47 +173,74 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			color: #1e293b;
 			max-width: 1000px;
 			margin: 0 auto;
+			padding-bottom: 4rem;
 		}
 
 		.header-section {
 			text-align: center;
-			margin-bottom: 3rem;
+			margin-bottom: 4rem;
+			position: relative;
+		}
+
+		.mascot-wrapper {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 1rem;
+		}
+
+		.bot-icon {
+			width: 120px;
+			height: auto;
+			filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4));
+			animation: float 3s ease-in-out infinite;
+		}
+
+		@keyframes float {
+			0%, 100% { transform: translateY(0); }
+			50% { transform: translateY(-10px); }
 		}
 
 		.header-section h1 {
-			font-size: 3rem;
+			font-size: 3.5rem;
 			color: #0f172a;
-			margin-bottom: 0.5rem;
+			margin: 0;
+			background: linear-gradient(to right, #0f172a, #3b82f6);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 
 		.subtitle {
 			font-size: 1.25rem;
 			color: #64748b;
+			margin-top: 0.5rem;
 		}
 
 		.header-pills {
 			display: flex;
 			justify-content: center;
 			gap: 1rem;
-			margin-top: 1rem;
+			margin-top: 1.5rem;
 		}
 
 		.header-pills span {
 			background: #f1f5f9;
-			padding: 0.25rem 0.75rem;
+			padding: 0.35rem 1rem;
 			border-radius: 99px;
 			font-size: 0.875rem;
-			font-weight: 600;
+			font-weight: 700;
+			color: #334155;
+			border: 1px solid #e2e8f0;
 		}
 
 		/* Knowledge Graph Section */
 		.knowledge-section {
 			background: #0f172a;
 			padding: 3rem;
-			border-radius: 20px;
+			border-radius: 24px;
 			color: white;
-			margin: 4rem 0;
+			margin-bottom: 4rem;
 			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+			border: 1px solid #1e293b;
 		}
 
 		.section-title {
@@ -251,7 +250,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 		.section-title h2 {
 			color: white;
-			border: none;
+			margin: 0;
 			font-size: 2rem;
 		}
 
@@ -286,7 +285,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			stroke: #7dd3fc;
 			stroke-width: 5;
 			stroke-dasharray: none;
-			filter: drop-shadow(0 0 8px #38bdf8);
+			filter: drop-shadow(0 0 10px #38bdf8);
 			animation: flow 2s linear infinite;
 		}
 
@@ -300,97 +299,58 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			stroke: #38bdf8;
 			stroke-width: 2;
 			cursor: pointer;
-			transition: all 0.3s;
+			transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		}
 
-		.node-circle.core { stroke: #fbbf24; fill: #451a03; }
+		.node-circle.core { stroke: #fbbf24; fill: #451a03; stroke-width: 4; }
 		.node-circle.engine { stroke: #22c55e; fill: #064e3b; }
 		.node-circle.goal { stroke: #ef4444; fill: #450a0a; }
 
 		.node-item:hover .node-circle {
-			r: 55;
-			filter: brightness(1.5) drop-shadow(0 0 15px currentColor);
+			r: 60;
+			filter: brightness(1.3) drop-shadow(0 0 15px currentColor);
 		}
 
 		.node-item text {
 			fill: #f8fafc;
 			font-size: 14px;
-			font-weight: 600;
+			font-weight: 700;
 			pointer-events: none;
 		}
 
 		.linkage-info {
 			background: #1e293b;
-			padding: 1.5rem;
-			border-radius: 12px;
+			padding: 2rem;
+			border-radius: 16px;
 			width: 100%;
-			max-width: 600px;
-			border: 1px solid #334155;
+			max-width: 700px;
+			border: 2px solid #334155;
 			text-align: center;
+			box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
 		}
 
 		.linkage-info h3 {
 			margin-top: 0;
 			color: #38bdf8;
-			font-size: 1.1rem;
+			font-size: 1.25rem;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
 		}
 
 		#linkage-desc {
 			color: #cbd5e1;
-			transition: color 0.3s;
+			transition: all 0.3s;
+			font-size: 1.1rem;
 		}
 
 		#linkage-desc.highlight {
 			color: white;
 		}
 
-		/* Achievement Banner */
-		.achievement-banner {
-			background: #f8fafc;
-			padding: 3rem;
-			border-radius: 16px;
-			margin: 4rem 0;
-			text-align: center;
-			border: 1px solid #e2e8f0;
-			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-		}
-
-		.ai-glow {
-			background: linear-gradient(#fff, #fff) padding-box,
-						linear-gradient(to right, #3b82f6, #8b5cf6) border-box;
-			border: 3px solid transparent;
-		}
-
-		.achievement-banner h2 {
-			color: #1e40af;
-			font-size: 2.5rem;
-			margin-bottom: 0.5rem;
-		}
-
-		/* Expertise Grid */
-		.grid-expertise {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 2rem;
-		}
-
-		.expertise-card {
-			background: #ffffff;
-			padding: 2.5rem;
-			border-radius: 12px;
-			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-			border-top: 5px solid #3b82f6;
-		}
-
-		.expertise-card h3 {
-			color: #1e3a8a;
-			margin-top: 0;
-		}
-
 		/* Timeline */
 		.timeline {
 			margin-top: 2rem;
-			border-left: 2px solid #e2e8f0;
+			border-left: 3px solid #e2e8f0;
 			padding-left: 2rem;
 		}
 
@@ -402,23 +362,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 		.timeline-item::before {
 			content: '';
 			position: absolute;
-			left: -2.7rem;
+			left: -2.85rem;
 			top: 0.3rem;
-			width: 1.2rem;
-			height: 1.2rem;
+			width: 1.5rem;
+			height: 1.5rem;
 			background: #3b82f6;
 			border-radius: 50%;
-			border: 4px solid #fff;
+			border: 5px solid #fff;
+			box-shadow: 0 0 0 2px #e2e8f0;
 		}
 
 		.time-header {
 			display: flex;
 			justify-content: space-between;
 			font-weight: 700;
+			font-size: 1.1rem;
 		}
 
 		.company { color: #1e40af; }
-		.date { color: #64748b; font-size: 0.9rem; }
+		.date { color: #64748b; }
 
 		/* Buttons */
 		.download-container {
@@ -428,18 +390,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 		}
 
 		.download-button {
-			padding: 0.75rem 1.5rem;
-			background: #1e293b;
+			padding: 0.85rem 1.75rem;
+			background: #0f172a;
 			color: white;
 			text-decoration: none;
-			border-radius: 8px;
+			border-radius: 10px;
 			font-weight: 700;
-			transition: all 0.2s;
+			transition: all 0.3s;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
 		}
 
 		.download-button:hover {
 			background: #334155;
-			transform: scale(1.05);
+			transform: translateY(-3px);
+			box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);
 		}
 
 		.download-button.secondary { background: #64748b; }
@@ -447,6 +413,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 		@media (max-width: 768px) {
 			.knowledge-section { padding: 1.5rem; }
 			.header-section h1 { font-size: 2.5rem; }
+			.bot-icon { width: 90px; }
 		}
 	</style>
 </Layout>

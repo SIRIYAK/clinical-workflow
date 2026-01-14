@@ -1,0 +1,257 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<div id="gemini-chat-widget" class="chat-widget">
+	<button id="chat-toggle" class="chat-toggle" aria-label="Chat with Siriyak's AI">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai-icon"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+	</button>
+
+	<div id="chat-window" class="chat-window hidden">
+		<header class="chat-header">
+			<h3>Siriyak AI Assistant</h3>
+			<button id="chat-close" class="close-btn">&times;</button>
+		</header>
+		<div id="chat-messages" class="chat-messages">
+			<div class="message ai">Hi! I'm Siriyak's AI assistant. I've read his resume and project framework. How can I help you today?</div>
+		</div>
+		<form id="chat-input-form" class="chat-input">
+			<input type="text" id="chat-input" placeholder="Ask about experience, skills..." autocomplete="off" />
+			<button type="submit" id="send-btn">Send</button>
+		</form>
+	</div>
+</div>
+
+<script>
+	import { GoogleGenerativeAI } from "@google/generative-ai";
+
+	// SYSTEM PROMPT with Siriyak's Resume Details
+	const SYSTEM_INSTRUCTIONS = `
+	You are Siriyak CR's professional AI assistant. You answer questions strictly based on the provided professional details.
+	Siriyak is an AI-Augmented Biostatistician & Clinical Data Automation Specialist with 8+ years of experience.
+	
+	KEY DETAILS:
+	- Experience: 8+ Years (6+ in Clinical Domain).
+	- Current Role: Lead Clinical Database Programmer at KLiNERA.
+	- Top Achievement: Developed a 95% Automated Clinical Trial Framework using pharmaverse (R/admiral/xportr).
+	- Expertise: R (Expert), SAS, SQL, Python, CDISC (SDTM/ADaM), Oncology (RECIST 1.1), Survival Analysis (OS/PFS).
+	- Automation: 80%+ task automation across SAPs, TLFs, and regulatory docs.
+	- Tools: Gemini (Antigravity), Claude, GPT-4, R Shiny, Veeva EDC.
+	- Education: M.Sc in Statistics from University of Mysore.
+	
+	WORK HISTORY:
+	- KLiNERA (2024-Present): Lead Clinical Database Programmer.
+	- CONCERTAi (2023-2024): Senior Statistical Analyst (Led team, RWE survival analysis).
+	- ELI LILLY (2021-2023): Associate Manager (Automated global reporting, RBM).
+	- IQVIA (2020-2021): Clinical Data Analyst (R Shiny automation, Bayesian models).
+	
+	Be professional, concise, and helpful. If asked something outside his professional scope, politely steer back.
+	`;
+
+	const chatToggle = document.getElementById('chat-toggle');
+	const chatWindow = document.getElementById('chat-window');
+	const chatClose = document.getElementById('chat-close');
+	const chatForm = document.getElementById('chat-input-form');
+	const chatInput = document.getElementById('chat-input');
+	const chatMessages = document.getElementById('chat-messages');
+
+	// Toggle Visibility
+	chatToggle.addEventListener('click', () => chatWindow.classList.toggle('hidden'));
+	chatClose.addEventListener('click', () => chatWindow.classList.add('hidden'));
+
+	// Initialize Gemini (In a real app, you'd use a server-side route to hide the key)
+	// For this demo, we assume the user might provide it via environment variable
+	const API_KEY = import.meta.env.PUBLIC_GEMINI_API_KEY;
+
+	async function sendMessage(input) {
+		if (!API_KEY) {
+			addMessage('ai', 'API Key missing. Please add PUBLIC_GEMINI_API_KEY to your .env file.');
+			return;
+		}
+
+		try {
+			const genAI = new GoogleGenerativeAI(API_KEY);
+			const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash", systemInstruction: SYSTEM_INSTRUCTIONS });
+			
+			const chat = model.startChat({
+				history: [],
+			});
+
+			const result = await chat.sendMessage(input);
+			const response = await result.response;
+			addMessage('ai', response.text());
+		} catch (error) {
+			console.error(error);
+			addMessage('ai', 'Sorry, I encountered an error. Please try again later.');
+		}
+	}
+
+	function addMessage(sender, text) {
+		const msgDiv = document.createElement('div');
+		msgDiv.className = `message ${sender}`;
+		msgDiv.textContent = text;
+		chatMessages.appendChild(msgDiv);
+		chatMessages.scrollTop = chatMessages.scrollHeight;
+	}
+
+	chatForm.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		const text = chatInput.value.trim();
+		if (text) {
+			addMessage('user', text);
+			chatInput.value = '';
+			addMessage('ai', 'Thinking...');
+			// Remove the thinking placeholder and send
+			const thinkingMsg = chatMessages.lastElementChild;
+			await sendMessage(text);
+			thinkingMsg.remove();
+		}
+	});
+</script>
+
+<style>
+	.chat-widget {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		z-index: 1000;
+		font-family: sans-serif;
+	}
+
+	.chat-toggle {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: #1e293b;
+		color: #38bdf8;
+		border: 2px solid #38bdf8;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+		transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+
+	.chat-toggle:hover {
+		transform: scale(1.1) rotate(5deg);
+		background: #0f172a;
+	}
+
+	.chat-window {
+		position: absolute;
+		bottom: 75px;
+		right: 0;
+		width: 350px;
+		height: 480px;
+		background: #0f172a;
+		border: 1px solid #1e293b;
+		border-radius: 16px;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+		transition: transform 0.3s, opacity 0.3s;
+	}
+
+	.chat-window.hidden {
+		transform: translateY(20px);
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.chat-header {
+		padding: 1rem;
+		background: #1e293b;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid #334155;
+	}
+
+	.chat-header h3 {
+		margin: 0;
+		font-size: 1rem;
+		color: #e2e8f0;
+	}
+
+	.close-btn {
+		background: none;
+		border: none;
+		color: #94a3b8;
+		font-size: 1.5rem;
+		cursor: pointer;
+	}
+
+	.chat-messages {
+		flex: 1;
+		padding: 1rem;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		scrollbar-width: thin;
+		scrollbar-color: #334155 #0f172a;
+	}
+
+	.message {
+		padding: 0.75rem 1rem;
+		border-radius: 12px;
+		max-width: 85%;
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+
+	.message.ai {
+		background: #1e293b;
+		color: #e2e8f0;
+		align-self: flex-start;
+		border-bottom-left-radius: 2px;
+	}
+
+	.message.user {
+		background: #38bdf8;
+		color: #0f172a;
+		align-self: flex-end;
+		border-bottom-right-radius: 2px;
+		font-weight: 600;
+	}
+
+	.chat-input {
+		padding: 1rem;
+		display: flex;
+		gap: 0.5rem;
+		border-top: 1px solid #1e293b;
+	}
+
+	.chat-input input {
+		flex: 1;
+		background: #1e293b;
+		border: 1px solid #334155;
+		border-radius: 8px;
+		padding: 0.5rem 0.75rem;
+		color: white;
+		outline: none;
+	}
+
+	.chat-input input:focus {
+		border-color: #38bdf8;
+	}
+
+	.chat-input button {
+		background: #38bdf8;
+		color: #0f172a;
+		border: none;
+		border-radius: 8px;
+		padding: 0.5rem 1rem;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	@media (max-width: 480px) {
+		.chat-window {
+			width: calc(100vw - 4rem);
+			height: 60vh;
+		}
+	}
+</style>

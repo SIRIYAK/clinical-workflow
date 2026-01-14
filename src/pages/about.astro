@@ -1,6 +1,5 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import BotMascot from '../assets/bot-mascot.png';
 import Layout from '../layouts/BlogPost.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
@@ -12,31 +11,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 	heroImage={AboutHeroImage}
 >
 	<div class="about-container">
-		<header class="header-section">
-			<div class="mascot-wrapper">
-				<img src={BotMascot.src} alt="AI Agent Mascot" class="bot-icon" />
-			</div>
-			<h1>Siriyak CR</h1>
-			<p class="subtitle">AI-Augmented Biostatistician & Clinical Data Automation Specialist</p>
-			<div class="header-pills">
-				<span>8+ Years Experience</span>
-				<span>M.Sc Statistics</span>
-				<span>ICH-GCP Certified</span>
-			</div>
-		</header>
-
-		<section class="intro">
-			<p>
-				As an <strong>AI-Augmented Biostatistician</strong>, I build <strong>intelligent infrastructure</strong> to automate clinical reporting. 
-				My workflow is an inter-linked ecosystem involving <strong>Agentic AI</strong>, <strong>Pharmaverse-based automation</strong>, and <strong>Deep Oncology Biostatistics</strong>.
-			</p>
-		</section>
-
-		<!-- Enhanced Knowledge Diagram -->
+		<!-- Enhanced Knowledge Diagram - Now at the Top -->
 		<section class="knowledge-section">
 			<div class="section-title">
-				<h2>Inter-linked Knowledge Ecosystem</h2>
-				<p>Hover over the nodes to explore the clinical automation lifecycle.</p>
+				<h2>Interactive Career Neural Map</h2>
+				<p>Hover over the nodes to explore my clinical automation ecosystem.</p>
 			</div>
 			
 			<div class="knowledge-graph">
@@ -91,6 +70,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 					</div>
 				</div>
 			</div>
+		</section>
+
+		<header class="header-section">
+			<h1>Siriyak CR</h1>
+			<p class="subtitle">AI-Augmented Biostatistician & Clinical Data Automation Specialist</p>
+			<div class="header-pills">
+				<span>8+ Years Experience</span>
+				<span>M.Sc Statistics</span>
+				<span>ICH-GCP Certified</span>
+			</div>
+		</header>
+
+		<section class="intro">
+			<p>
+				As an <strong>AI-Augmented Biostatistician</strong>, I build <strong>intelligent infrastructure</strong> to automate clinical reporting. 
+				My workflow is an inter-linked ecosystem involving <strong>Agentic AI</strong>, <strong>Pharmaverse-based automation</strong>, and <strong>Deep Oncology Biostatistics</strong>.
+			</p>
 		</section>
 
 		<section class="experience-highlights">
@@ -180,24 +176,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			text-align: center;
 			margin-bottom: 4rem;
 			position: relative;
-		}
-
-		.mascot-wrapper {
-			display: flex;
-			justify-content: center;
-			margin-bottom: 1rem;
-		}
-
-		.bot-icon {
-			width: 120px;
-			height: auto;
-			filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4));
-			animation: float 3s ease-in-out infinite;
-		}
-
-		@keyframes float {
-			0%, 100% { transform: translateY(0); }
-			50% { transform: translateY(-10px); }
 		}
 
 		.header-section h1 {

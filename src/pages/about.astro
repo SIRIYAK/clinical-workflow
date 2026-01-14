@@ -6,46 +6,401 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 <Layout
 	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
+	description="Siriyak CR - AI-Augmented Biostatistics & Clinical Data Automation Specialist (8+ Years)"
+	pubDate={new Date('January 14 2026')}
 	heroImage={AboutHeroImage}
 >
-	<p>
-		I am a Clinical Research professional with extensive experience in biostatistics, data management, and automation. 
-		My mission is to leverage technology to accelerate the delivery of life-saving treatments to patients.
-	</p>
+	<div class="about-container">
+		<header class="header-section">
+			<h1>Siriyak CR</h1>
+			<p class="subtitle">AI-Augmented Biostatistician & Clinical Data Automation Specialist</p>
+			<div class="header-pills">
+				<span>8+ Years Experience</span>
+				<span>M.Sc Statistics</span>
+				<span>ICH-GCP Certified</span>
+			</div>
+		</header>
 
-	<h2>Professional Experience</h2>
-	<p>
-		With 7 years of experience in the pharmaceutical and CRO industry, I have developed a deep understanding of 
-		clinical trial phases (0-III) and the regulatory landscape. My work focuses on:
-	</p>
-	<ul>
-		<li>Automating SDTM and ADaM dataset generation to speed up clinical reporting.</li>
-		<li>Implementing Risk-Based Monitoring (RBM) and real-time data quality tracking.</li>
-		<li>Developing robust, validated R-based tools for biostatistics and data management teams.</li>
-	</ul>
+		<section class="intro">
+			<p>
+				As an <strong>AI-Augmented Biostatistician</strong> with over <strong>8 years of experience</strong> (6+ in the clinical domain), 
+				I specialize in transforming complex data into regulatory-ready assets. My work exists at the intersection of traditional biostatistics, 
+				end-to-end clinical programming, and <strong>Agentic AI automation</strong>.
+			</p>
+		</section>
 
-	<h2>Resumes</h2>
-	<p>You can download my latest resumes below:</p>
-	<div style="display: flex; gap: 20px; margin-top: 20px;">
-		<a href={`${base}/resumes/CV-SiriyakCR.pdf`} class="download-button" download>
-			📄 Final CV (PDF)
-		</a>
+		<!-- Interactive Neural Map -->
+		<section class="neural-section">
+			<div class="section-title">
+				<h2>Interactive Career Neural Map</h2>
+				<p>Hover over hubs to see how AI, Statistics, and Data Management interconnect.</p>
+			</div>
+			
+			<div class="neural-network-container">
+				<svg viewBox="0 0 800 500" class="neural-svg">
+					<!-- Connections (Lines) -->
+					<g class="connections">
+						<line x1="400" y1="250" x2="200" y2="150" class="link core-link" /> <!-- AI to Programming -->
+						<line x1="400" y1="250" x2="600" y2="150" class="link core-link" /> <!-- AI to Clinical -->
+						<line x1="400" y1="250" x2="400" y2="400" class="link core-link" /> <!-- AI to Standards -->
+						
+						<line x1="200" y1="150" x2="100" y2="100" class="link sub-link" /> <!-- Programming to R -->
+						<line x1="200" y1="150" x2="100" y2="200" class="link sub-link" /> <!-- Programming to Python -->
+						
+						<line x1="600" y1="150" x2="700" y2="100" class="link sub-link" /> <!-- Clinical to Oncology -->
+						<line x1="600" y1="150" x2="700" y2="200" class="link sub-link" /> <!-- Clinical to Survival -->
+					</g>
+
+					<!-- Nodes -->
+					<g class="nodes">
+						<!-- Core Hub: AI & LLM -->
+						<g class="node hub" id="hub-ai">
+							<circle cx="400" cy="250" r="35" />
+							<text x="400" y="305" text-anchor="middle">Agentic AI</text>
+							<title>80%+ Task Automation using Gemini (Antigravity), Claude, and Multi-Agent Orchestration.</title>
+						</g>
+
+						<!-- Hub: Programming -->
+						<g class="node hub" id="hub-prog">
+							<circle cx="200" cy="150" r="25" />
+							<text x="200" y="195" text-anchor="middle">Programming</text>
+						</g>
+
+						<!-- Hub: Clinical -->
+						<g class="node hub" id="hub-clinical">
+							<circle cx="600" cy="150" r="25" />
+							<text x="600" y="195" text-anchor="middle">Clinical Stats</text>
+						</g>
+
+						<!-- Hub: Standards -->
+						<g class="node hub" id="hub-standards">
+							<circle cx="400" cy="400" r="25" />
+							<text x="400" y="445" text-anchor="middle">Standards</text>
+						</g>
+
+						<!-- Specific Skills -->
+						<circle cx="100" cy="100" r="15" class="node skill" /><text x="100" y="130" text-anchor="middle" class="skill-label">R / Shiny</text>
+						<circle cx="100" cy="200" r="15" class="node skill" /><text x="100" y="230" text-anchor="middle" class="skill-label">SAS / SQL</text>
+						<circle cx="700" cy="100" r="15" class="node skill" /><text x="700" y="130" text-anchor="middle" class="skill-label">Oncology</text>
+						<circle cx="700" cy="200" r="15" class="node skill" /><text x="700" y="230" text-anchor="middle" class="skill-label">Survival</text>
+					</g>
+				</svg>
+			</div>
+		</section>
+
+		<div class="achievement-banner ai-glow">
+			<h2>80%+ Workflow Automation</h2>
+			<p>Pioneering <strong>Multi-Agent Orchestration</strong> for SAP development, TLF generation, and Autonomous Validation.</p>
+		</div>
+
+		<section class="grid-expertise">
+			<div class="expertise-card">
+				<h3>Intelligence Stack</h3>
+				<ul>
+					<li><strong>GenAI Agents:</strong> Gemini (Antigravity), Claude Sonnet/Haiku, GPT-4</li>
+					<li><strong>Methodologies:</strong> Multi-Agent Workflows, LLM-Assisted Coding (R/SAS/Python)</li>
+					<li><strong>Automation:</strong> Autonomous Validation Pipelines, RECIST 1.1 Logic</li>
+				</ul>
+			</div>
+			<div class="expertise-card">
+				<h3>Clinical Depth</h3>
+				<ul>
+					<li><strong>Therapeutic Areas:</strong> Oncology (RECIST 1.1), Neuroscience, Autoimmune</li>
+					<li><strong>Statistical Methods:</strong> Survival Analysis (RWPFS, RWOS), Bayesian RBM</li>
+					<li><strong>Endpoints:</strong> OS/PFS, RWDOT, RWTTD, TTNT, DOR</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="experience-highlights">
+			<h2>Career Journey</h2>
+			<div class="timeline">
+				<div class="timeline-item">
+					<div class="time-header">
+						<span class="company">KLiNERA</span>
+						<span class="date">April 2024 – Present</span>
+					</div>
+					<p>Biostatistician / Lead Clinical Database Programmer. Specialized in Veeva EDC automation and Oncology publication reporting.</p>
+				</div>
+				<div class="timeline-item">
+					<div class="time-header">
+						<span class="company">CONCERTAi</span>
+						<span class="date">2023 – 2024</span>
+					</div>
+					<p>Senior Statistical Analyst. Led biostatistics teams and built LLM-based classification models for RWE survival outcomes.</p>
+				</div>
+				<div class="timeline-item">
+					<div class="time-header">
+						<span class="company">ELI LILLY AND COMPANY</span>
+						<span class="date">2021 – 2023</span>
+					</div>
+					<p>Associate Manager. Automated TLFs from ADaM/SDTM and developed Bayesian risk models for RBM.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="resumes">
+			<h2>Enhanced Resumes</h2>
+			<div class="download-container">
+				<a href={`${base}/resumes/CV-SiriyakCR.pdf`} class="download-button" download>
+					📄 Final AI-CV (PDF)
+				</a>
+				<a href={`${base}/resumes/SiriyakCR- Biostatistician (2).pdf`} class="download-button secondary" download>
+					📄 Biostatistician CV
+				</a>
+			</div>
+		</section>
 	</div>
 
 	<style>
+		/* Typography & Layout */
+		.about-container {
+			line-height: 1.6;
+			color: #1e293b;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		.header-section {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		.header-section h1 {
+			font-size: 3rem;
+			color: #0f172a;
+			margin-bottom: 0.5rem;
+		}
+
+		.subtitle {
+			font-size: 1.25rem;
+			color: #64748b;
+			font-weight: 500;
+		}
+
+		.header-pills {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			margin-top: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.header-pills span {
+			background: #f1f5f9;
+			padding: 0.25rem 0.75rem;
+			border-radius: 99px;
+			font-size: 0.875rem;
+			font-weight: 600;
+			color: #334155;
+		}
+
+		/* Neural Network Styling */
+		.neural-section {
+			background: #0f172a;
+			padding: 2.5rem;
+			border-radius: 16px;
+			color: white;
+			margin: 3rem 0;
+			overflow: hidden;
+		}
+
+		.section-title {
+			text-align: center;
+			margin-bottom: 1.5rem;
+		}
+
+		.section-title h2 {
+			color: white;
+			border: none;
+			margin: 0;
+		}
+
+		.section-title p {
+			color: #94a3b8;
+		}
+
+		.neural-network-container {
+			width: 100%;
+			height: auto;
+			display: flex;
+			justify-content: center;
+		}
+
+		.neural-svg {
+			max-width: 100%;
+			height: auto;
+			filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
+		}
+
+		.link {
+			stroke: #334155;
+			stroke-width: 1.5;
+			stroke-dasharray: 5;
+			animation: flow 10s linear infinite;
+		}
+
+		.core-link {
+			stroke: #38bdf8;
+			stroke-width: 2.5;
+			stroke-dasharray: none;
+			opacity: 0.5;
+		}
+
+		@keyframes flow {
+			from { stroke-dashoffset: 100; }
+			to { stroke-dashoffset: 0; }
+		}
+
+		.node circle {
+			fill: #1e293b;
+			stroke: #38bdf8;
+			stroke-width: 2;
+			transition: all 0.3s;
+			cursor: pointer;
+		}
+
+		.node.hub circle {
+			fill: #0c4a6e;
+			stroke-width: 3;
+		}
+
+		.node:hover circle {
+			fill: #0ea5e9;
+			stroke: white;
+			r: 38; /* Small bulge effect */
+		}
+
+		.node text {
+			fill: #e2e8f0;
+			font-size: 14px;
+			font-weight: 600;
+			pointer-events: none;
+		}
+
+		.skill-label {
+			fill: #94a3b8;
+			font-size: 12px;
+			font-weight: 400;
+		}
+
+		/* Achievement Banner */
+		.achievement-banner {
+			background: #f8fafc;
+			padding: 2.5rem;
+			border-radius: 16px;
+			margin: 3rem 0;
+			text-align: center;
+			border: 1px solid #e2e8f0;
+			position: relative;
+		}
+
+		.ai-glow {
+			border: 2px solid transparent;
+			background-clip: padding-box, border-box;
+			background-image: linear-gradient(white, white), 
+							  linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+			box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+		}
+
+		.achievement-banner h2 {
+			color: #1e40af;
+			border: none;
+			font-size: 2.25rem;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Expertise Grid */
+		.grid-expertise {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+			margin: 3rem 0;
+		}
+
+		.expertise-card {
+			background: #ffffff;
+			padding: 2rem;
+			border-radius: 12px;
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+			border-top: 4px solid #3b82f6;
+		}
+
+		.expertise-card h3 {
+			margin-top: 0;
+			color: #1e3a8a;
+		}
+
+		.expertise-card ul {
+			padding-left: 1.25rem;
+			color: #475569;
+		}
+
+		/* Timeline */
+		.timeline {
+			margin-top: 1.5rem;
+			border-left: 2px solid #e2e8f0;
+			padding-left: 1.5rem;
+		}
+
+		.timeline-item {
+			margin-bottom: 2rem;
+			position: relative;
+		}
+
+		.timeline-item::before {
+			content: '';
+			position: absolute;
+			left: -2.15rem;
+			top: 0.25rem;
+			width: 1rem;
+			height: 1rem;
+			background: #3b82f6;
+			border-radius: 50%;
+			border: 3px solid white;
+		}
+
+		.time-header {
+			display: flex;
+			justify-content: space-between;
+			font-weight: 700;
+			margin-bottom: 0.5rem;
+		}
+
+		.company { color: #1e40af; }
+		.date { color: #64748b; font-size: 0.875rem; }
+
+		/* Buttons */
+		.download-container {
+			display: flex;
+			gap: 1.5rem;
+			margin-top: 1.5rem;
+			flex-wrap: wrap;
+		}
+
 		.download-button {
-			display: inline-block;
-			padding: 10px 20px;
-			background-color: #004a99;
+			padding: 0.75rem 1.5rem;
+			background: #1e293b;
 			color: white;
 			text-decoration: none;
-			border-radius: 5px;
-			font-weight: bold;
+			border-radius: 8px;
+			font-weight: 700;
+			transition: all 0.2s;
 		}
+
 		.download-button:hover {
-			background-color: #003366;
+			background: #334155;
+			transform: scale(1.02);
+		}
+
+		.download-button.secondary {
+			background: #64748b;
+		}
+
+		@media (max-width: 768px) {
+			.header-section h1 { font-size: 2.25rem; }
+			.subtitle { font-size: 1.1rem; }
+			.neural-section { padding: 1rem; }
 		}
 	</style>
 </Layout>

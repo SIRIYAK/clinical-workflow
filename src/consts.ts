@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'Siriyak CR - Clinical Automation';
 export const SITE_DESCRIPTION = 'Professional portfolio and insights on clinical trial data automation.';
+export const GEMINI_API_KEY = 'AIzaSyBEAhtRqZqMY31kY5JNLwBNsZFyfFthHWQ';

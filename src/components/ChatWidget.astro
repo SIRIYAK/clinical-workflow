@@ -24,6 +24,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 <script>
 	import { GoogleGenerativeAI } from "@google/generative-ai";
+	import { GEMINI_API_KEY } from "../consts";
 
 	// SYSTEM PROMPT with Siriyak's Resume Details
 	const SYSTEM_INSTRUCTIONS = `
@@ -59,9 +60,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 	chatToggle.addEventListener('click', () => chatWindow.classList.toggle('hidden'));
 	chatClose.addEventListener('click', () => chatWindow.classList.add('hidden'));
 
-	// Initialize Gemini (In a real app, you'd use a server-side route to hide the key)
-	// For this demo, we assume the user might provide it via environment variable
-	const API_KEY = import.meta.env.PUBLIC_GEMINI_API_KEY;
+	// Initialize Gemini using the persistent key
+	const API_KEY = GEMINI_API_KEY;
 
 	async function sendMessage(input) {
 		if (!API_KEY) {

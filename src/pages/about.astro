@@ -23,91 +23,97 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 		<section class="intro">
 			<p>
-				As an <strong>AI-Augmented Biostatistician</strong> with over <strong>8 years of experience</strong> (6+ in the clinical domain), 
-				I specialize in transforming complex data into regulatory-ready assets. My work exists at the intersection of traditional biostatistics, 
-				end-to-end clinical programming, and <strong>Agentic AI automation</strong>.
+				As an <strong>AI-Augmented Biostatistician</strong>, I don't just analyze data; I build the <strong>intelligent infrastructure</strong> that processes it. 
+				Over the last 8 years, I've transitioned from manual statistical programming to architecting <strong>multi-agent AI systems</strong> that automate 80%+ of the clinical trial reporting lifecycle.
 			</p>
 		</section>
 
-		<!-- Interactive Neural Map -->
-		<section class="neural-section">
+		<!-- Enhanced Knowledge Diagram -->
+		<section class="knowledge-section">
 			<div class="section-title">
-				<h2>Interactive Career Neural Map</h2>
-				<p>Hover over hubs to see how AI, Statistics, and Data Management interconnect.</p>
+				<h2>Inter-linked Knowledge Ecosystem</h2>
+				<p>Hover over the nodes to see how AI, Statistics, and Data Management collaborate.</p>
 			</div>
 			
-			<div class="neural-network-container">
-				<svg viewBox="0 0 800 500" class="neural-svg">
-					<!-- Connections (Lines) -->
-					<g class="connections">
-						<line x1="400" y1="250" x2="200" y2="150" class="link core-link" /> <!-- AI to Programming -->
-						<line x1="400" y1="250" x2="600" y2="150" class="link core-link" /> <!-- AI to Clinical -->
-						<line x1="400" y1="250" x2="400" y2="400" class="link core-link" /> <!-- AI to Standards -->
-						
-						<line x1="200" y1="150" x2="100" y2="100" class="link sub-link" /> <!-- Programming to R -->
-						<line x1="200" y1="150" x2="100" y2="200" class="link sub-link" /> <!-- Programming to Python -->
-						
-						<line x1="600" y1="150" x2="700" y2="100" class="link sub-link" /> <!-- Clinical to Oncology -->
-						<line x1="600" y1="150" x2="700" y2="200" class="link sub-link" /> <!-- Clinical to Survival -->
-					</g>
-
-					<!-- Nodes -->
-					<g class="nodes">
-						<!-- Core Hub: AI & LLM -->
-						<g class="node hub" id="hub-ai">
-							<circle cx="400" cy="250" r="35" />
-							<text x="400" y="305" text-anchor="middle">Agentic AI</text>
-							<title>80%+ Task Automation using Gemini (Antigravity), Claude, and Multi-Agent Orchestration.</title>
+			<div class="knowledge-graph">
+				<div class="graph-ui">
+					<svg viewBox="0 0 800 500" class="interactive-svg" id="knowledge-graph-svg">
+						<!-- Links with IDs for highlighting -->
+						<g class="links">
+							<!-- Data to Automation -->
+							<path d="M 150 250 Q 300 150 400 250" class="link-path" data-node="node-data node-auto" id="link-data-auto" />
+							<!-- AI to Automation -->
+							<path d="M 400 100 Q 400 175 400 250" class="link-path" data-node="node-ai node-auto" id="link-ai-auto" />
+							<!-- Stats to Automation -->
+							<path d="M 650 250 Q 500 150 400 250" class="link-path" data-node="node-stats node-auto" id="link-stats-auto" />
+							<!-- Automation to Regulatory -->
+							<path d="M 400 250 Q 400 375 400 450" class="link-path" data-node="node-auto node-reg" id="link-auto-reg" />
+							<!-- Stats to RWE -->
+							<path d="M 650 250 Q 650 350 550 400" class="link-path" data-node="node-stats node-rwe" id="link-stats-rwe" />
 						</g>
 
-						<!-- Hub: Programming -->
-						<g class="node hub" id="hub-prog">
-							<circle cx="200" cy="150" r="25" />
-							<text x="200" y="195" text-anchor="middle">Programming</text>
-						</g>
+						<!-- Nodes -->
+						<g class="nodes">
+							<!-- AI Hub (Top) -->
+							<g class="node-item" id="node-ai" data-desc="AI Agents (Gemini/Antigravity) act as the 'Orchestrator', driving the logic for code generation and autonomous validation.">
+								<circle cx="400" cy="100" r="40" class="node-circle core" />
+								<text x="400" y="105" text-anchor="middle">AI Agents</text>
+							</g>
 
-						<!-- Hub: Clinical -->
-						<g class="node hub" id="hub-clinical">
-							<circle cx="600" cy="150" r="25" />
-							<text x="600" y="195" text-anchor="middle">Clinical Stats</text>
-						</g>
+							<!-- Data Hub (Left) -->
+							<g class="node-item" id="node-data" data-desc="Clinical Data (EDC/RWE) is the raw material. I automate its ingestion and cleaning using CQL and R.">
+								<circle cx="150" cy="250" r="35" class="node-circle" />
+								<text x="150" y="255" text-anchor="middle">Clinical Data</text>
+							</g>
 
-						<!-- Hub: Standards -->
-						<g class="node hub" id="hub-standards">
-							<circle cx="400" cy="400" r="25" />
-							<text x="400" y="445" text-anchor="middle">Standards</text>
-						</g>
+							<!-- Automation Engine (Center) -->
+							<g class="node-item" id="node-auto" data-desc="The Automation Pipeline (53+ R scripts) is where data meets logic to produce SDTM, ADaM, and TLFs.">
+								<circle cx="400" cy="250" r="50" class="node-circle engine" />
+								<text x="400" y="255" text-anchor="middle">Automation</text>
+							</g>
 
-						<!-- Specific Skills -->
-						<circle cx="100" cy="100" r="15" class="node skill" /><text x="100" y="130" text-anchor="middle" class="skill-label">R / Shiny</text>
-						<circle cx="100" cy="200" r="15" class="node skill" /><text x="100" y="230" text-anchor="middle" class="skill-label">SAS / SQL</text>
-						<circle cx="700" cy="100" r="15" class="node skill" /><text x="700" y="130" text-anchor="middle" class="skill-label">Oncology</text>
-						<circle cx="700" cy="200" r="15" class="node skill" /><text x="700" y="230" text-anchor="middle" class="skill-label">Survival</text>
-					</g>
-				</svg>
+							<!-- Stats Hub (Right) -->
+							<g class="node-item" id="node-stats" data-desc="Biostatistics (Oncology/Survival) provides the mathematical soul, from KM curves to RECIST evaluation.">
+								<circle cx="650" cy="250" r="35" class="node-circle" />
+								<text x="650" y="255" text-anchor="middle">Biostatistics</text>
+							</g>
+
+							<!-- Regulatory (Bottom) -->
+							<g class="node-item" id="node-reg" data-desc="Regulatory Submission is the final output—validated XPT/RTF files compliant with FDA/EMA standards.">
+								<circle cx="400" cy="450" r="35" class="node-circle goal" />
+								<text x="400" y="455" text-anchor="middle">Submission</text>
+							</g>
+						</g>
+					</svg>
+
+					<div class="linkage-info" id="linkage-info-box">
+						<h3>Inter-linkage Detail</h3>
+						<p id="linkage-desc">Hover over a node to explore the clinical automation ecosystem.</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<div class="achievement-banner ai-glow">
-			<h2>80%+ Workflow Automation</h2>
-			<p>Pioneering <strong>Multi-Agent Orchestration</strong> for SAP development, TLF generation, and Autonomous Validation.</p>
+			<h2>95% Automation Framework</h2>
+			<p>A production-ready pipeline transforming <strong>Raw SAS data</strong> into <strong>Regulatory submission packages</strong> in record time.</p>
 		</div>
 
 		<section class="grid-expertise">
 			<div class="expertise-card">
 				<h3>Intelligence Stack</h3>
 				<ul>
-					<li><strong>GenAI Agents:</strong> Gemini (Antigravity), Claude Sonnet/Haiku, GPT-4</li>
-					<li><strong>Methodologies:</strong> Multi-Agent Workflows, LLM-Assisted Coding (R/SAS/Python)</li>
-					<li><strong>Automation:</strong> Autonomous Validation Pipelines, RECIST 1.1 Logic</li>
+					<li><strong>GenAI Agents:</strong> Gemini (Antigravity), Claude Sonnet, GPT-4</li>
+					<li><strong>Flows:</strong> Multi-Agent Orchestration, LLM Code Generation</li>
+					<li><strong>Quality:</strong> Autonomous Validation, RECIST 1.1 Automation</li>
 				</ul>
 			</div>
 			<div class="expertise-card">
-				<h3>Clinical Depth</h3>
+				<h3>Biostatistician Expertise</h3>
 				<ul>
-					<li><strong>Therapeutic Areas:</strong> Oncology (RECIST 1.1), Neuroscience, Autoimmune</li>
-					<li><strong>Statistical Methods:</strong> Survival Analysis (RWPFS, RWOS), Bayesian RBM</li>
-					<li><strong>Endpoints:</strong> OS/PFS, RWDOT, RWTTD, TTNT, DOR</li>
+					<li><strong>Methods:</strong> Survival Analysis, Bayesian RBM, Machine Learning</li>
+					<li><strong>Therapeutic:</strong> Oncology, Neuroscience, Autoimmune</li>
+					<li><strong>Compliance:</strong> CDISC (SDTM/ADaM), ICH E3, FDA 21 CFR 11</li>
 				</ul>
 			</div>
 		</section>
@@ -118,29 +124,29 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 				<div class="timeline-item">
 					<div class="time-header">
 						<span class="company">KLiNERA</span>
-						<span class="date">April 2024 – Present</span>
+						<span class="date">2024 – Present</span>
 					</div>
-					<p>Biostatistician / Lead Clinical Database Programmer. Specialized in Veeva EDC automation and Oncology publication reporting.</p>
+					<p>Biostatistician / Lead Clinical Database Programmer. Managing Veeva EDC automation and Oncology publication data.</p>
 				</div>
 				<div class="timeline-item">
 					<div class="time-header">
 						<span class="company">CONCERTAi</span>
 						<span class="date">2023 – 2024</span>
 					</div>
-					<p>Senior Statistical Analyst. Led biostatistics teams and built LLM-based classification models for RWE survival outcomes.</p>
+					<p>Senior Statistical Analyst. Led biostatistics teams for Phase IV survival outcomes and RWE integration.</p>
 				</div>
 				<div class="timeline-item">
 					<div class="time-header">
 						<span class="company">ELI LILLY AND COMPANY</span>
 						<span class="date">2021 – 2023</span>
 					</div>
-					<p>Associate Manager. Automated TLFs from ADaM/SDTM and developed Bayesian risk models for RBM.</p>
+					<p>Associate Manager. Automated global reporting from ADaM/SDTM datasets using R and Power BI.</p>
 				</div>
 			</div>
 		</section>
 
 		<section class="resumes">
-			<h2>Enhanced Resumes</h2>
+			<h2>Professional Resumes</h2>
 			<div class="download-container">
 				<a href={`${base}/resumes/CV-SiriyakCR.pdf`} class="download-button" download>
 					📄 Final AI-CV (PDF)
@@ -152,12 +158,48 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 		</section>
 	</div>
 
+	<script>
+		// Knowledge Graph Interaction
+		const nodes = document.querySelectorAll('.node-item');
+		const paths = document.querySelectorAll('.link-path');
+		const descBox = document.getElementById('linkage-desc');
+
+		nodes.forEach(node => {
+			node.addEventListener('mouseenter', () => {
+				const nodeId = node.id;
+				const desc = node.getAttribute('data-desc');
+				
+				// Highlight description
+				descBox.textContent = desc;
+				descBox.classList.add('highlight');
+
+				// Highlight links
+				paths.forEach(path => {
+					const linkedNodes = path.getAttribute('data-node').split(' ');
+					if (linkedNodes.includes(nodeId)) {
+						path.classList.add('active');
+					} else {
+						path.style.opacity = '0.1';
+					}
+				});
+			});
+
+			node.addEventListener('mouseleave', () => {
+				descBox.classList.remove('highlight');
+				paths.forEach(path => {
+					path.classList.remove('active');
+					path.style.opacity = '0.4';
+				});
+			});
+		});
+	</script>
+
 	<style>
 		/* Typography & Layout */
 		.about-container {
 			line-height: 1.6;
 			color: #1e293b;
-			max-width: 900px;
+			max-width: 1000px;
 			margin: 0 auto;
 		}
 
@@ -175,7 +217,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 		.subtitle {
 			font-size: 1.25rem;
 			color: #64748b;
-			font-weight: 500;
 		}
 
 		.header-pills {
@@ -183,7 +224,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			justify-content: center;
 			gap: 1rem;
 			margin-top: 1rem;
-			flex-wrap: wrap;
 		}
 
 		.header-pills span {
@@ -192,121 +232,138 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			border-radius: 99px;
 			font-size: 0.875rem;
 			font-weight: 600;
-			color: #334155;
 		}
 
-		/* Neural Network Styling */
-		.neural-section {
+		/* Knowledge Graph Section */
+		.knowledge-section {
 			background: #0f172a;
-			padding: 2.5rem;
-			border-radius: 16px;
+			padding: 3rem;
+			border-radius: 20px;
 			color: white;
-			margin: 3rem 0;
-			overflow: hidden;
+			margin: 4rem 0;
+			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 		}
 
 		.section-title {
 			text-align: center;
-			margin-bottom: 1.5rem;
+			margin-bottom: 2rem;
 		}
 
 		.section-title h2 {
 			color: white;
 			border: none;
-			margin: 0;
+			font-size: 2rem;
 		}
 
 		.section-title p {
 			color: #94a3b8;
 		}
 
-		.neural-network-container {
+		.graph-ui {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		.interactive-svg {
 			width: 100%;
 			height: auto;
-			display: flex;
-			justify-content: center;
+			max-height: 500px;
 		}
 
-		.neural-svg {
-			max-width: 100%;
-			height: auto;
-			filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
-		}
-
-		.link {
-			stroke: #334155;
-			stroke-width: 1.5;
-			stroke-dasharray: 5;
-			animation: flow 10s linear infinite;
-		}
-
-		.core-link {
+		.link-path {
+			fill: none;
 			stroke: #38bdf8;
-			stroke-width: 2.5;
+			stroke-width: 3;
+			stroke-dasharray: 8;
+			opacity: 0.4;
+			transition: all 0.3s;
+		}
+
+		.link-path.active {
+			opacity: 1;
+			stroke: #7dd3fc;
+			stroke-width: 5;
 			stroke-dasharray: none;
-			opacity: 0.5;
+			filter: drop-shadow(0 0 8px #38bdf8);
+			animation: flow 2s linear infinite;
 		}
 
 		@keyframes flow {
-			from { stroke-dashoffset: 100; }
+			from { stroke-dashoffset: 20; }
 			to { stroke-dashoffset: 0; }
 		}
 
-		.node circle {
+		.node-circle {
 			fill: #1e293b;
 			stroke: #38bdf8;
 			stroke-width: 2;
-			transition: all 0.3s;
 			cursor: pointer;
+			transition: all 0.3s;
 		}
 
-		.node.hub circle {
-			fill: #0c4a6e;
-			stroke-width: 3;
+		.node-circle.core { stroke: #fbbf24; fill: #451a03; }
+		.node-circle.engine { stroke: #22c55e; fill: #064e3b; }
+		.node-circle.goal { stroke: #ef4444; fill: #450a0a; }
+
+		.node-item:hover .node-circle {
+			r: 55;
+			filter: brightness(1.5) drop-shadow(0 0 15px currentColor);
 		}
 
-		.node:hover circle {
-			fill: #0ea5e9;
-			stroke: white;
-			r: 38; /* Small bulge effect */
-		}
-
-		.node text {
-			fill: #e2e8f0;
+		.node-item text {
+			fill: #f8fafc;
 			font-size: 14px;
 			font-weight: 600;
 			pointer-events: none;
 		}
 
-		.skill-label {
-			fill: #94a3b8;
-			font-size: 12px;
-			font-weight: 400;
+		.linkage-info {
+			background: #1e293b;
+			padding: 1.5rem;
+			border-radius: 12px;
+			width: 100%;
+			max-width: 600px;
+			border: 1px solid #334155;
+			text-align: center;
+		}
+
+		.linkage-info h3 {
+			margin-top: 0;
+			color: #38bdf8;
+			font-size: 1.1rem;
+		}
+
+		#linkage-desc {
+			color: #cbd5e1;
+			transition: color 0.3s;
+		}
+
+		#linkage-desc.highlight {
+			color: white;
 		}
 
 		/* Achievement Banner */
 		.achievement-banner {
 			background: #f8fafc;
-			padding: 2.5rem;
+			padding: 3rem;
 			border-radius: 16px;
-			margin: 3rem 0;
+			margin: 4rem 0;
 			text-align: center;
 			border: 1px solid #e2e8f0;
-			position: relative;
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 		}
 
 		.ai-glow {
-			border: 2px solid transparent;
-			background-clip: padding-box, border-box;
-			background-image: linear-gradient(white, white), 
-							  linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-			box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+			background: linear-gradient(#fff, #fff) padding-box,
+						linear-gradient(to right, #3b82f6, #8b5cf6) border-box;
+			border: 3px solid transparent;
 		}
 
 		.achievement-banner h2 {
 			color: #1e40af;
-			border: none;
-			font-size: 2.25rem;
+			font-size: 2.5rem;
 			margin-bottom: 0.5rem;
 		}
 
@@ -315,67 +372,59 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 			gap: 2rem;
-			margin: 3rem 0;
 		}
 
 		.expertise-card {
 			background: #ffffff;
-			padding: 2rem;
+			padding: 2.5rem;
 			border-radius: 12px;
 			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-			border-top: 4px solid #3b82f6;
+			border-top: 5px solid #3b82f6;
 		}
 
 		.expertise-card h3 {
-			margin-top: 0;
 			color: #1e3a8a;
-		}
-
-		.expertise-card ul {
-			padding-left: 1.25rem;
-			color: #475569;
+			margin-top: 0;
 		}
 
 		/* Timeline */
 		.timeline {
-			margin-top: 1.5rem;
+			margin-top: 2rem;
 			border-left: 2px solid #e2e8f0;
-			padding-left: 1.5rem;
+			padding-left: 2rem;
 		}
 
 		.timeline-item {
-			margin-bottom: 2rem;
+			margin-bottom: 2.5rem;
 			position: relative;
 		}
 
 		.timeline-item::before {
 			content: '';
 			position: absolute;
-			left: -2.15rem;
-			top: 0.25rem;
-			width: 1rem;
-			height: 1rem;
+			left: -2.7rem;
+			top: 0.3rem;
+			width: 1.2rem;
+			height: 1.2rem;
 			background: #3b82f6;
 			border-radius: 50%;
-			border: 3px solid white;
+			border: 4px solid #fff;
 		}
 
 		.time-header {
 			display: flex;
 			justify-content: space-between;
 			font-weight: 700;
-			margin-bottom: 0.5rem;
 		}
 
 		.company { color: #1e40af; }
-		.date { color: #64748b; font-size: 0.875rem; }
+		.date { color: #64748b; font-size: 0.9rem; }
 
 		/* Buttons */
 		.download-container {
 			display: flex;
-			gap: 1.5rem;
-			margin-top: 1.5rem;
-			flex-wrap: wrap;
+			gap: 1rem;
+			margin-top: 2rem;
 		}
 
 		.download-button {
@@ -390,17 +439,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 		.download-button:hover {
 			background: #334155;
-			transform: scale(1.02);
+			transform: scale(1.05);
 		}
 
-		.download-button.secondary {
-			background: #64748b;
-		}
+		.download-button.secondary { background: #64748b; }
 
 		@media (max-width: 768px) {
-			.header-section h1 { font-size: 2.25rem; }
-			.subtitle { font-size: 1.1rem; }
-			.neural-section { padding: 1rem; }
+			.knowledge-section { padding: 1.5rem; }
+			.header-section h1 { font-size: 2.5rem; }
 		}
 	</style>
 </Layout>
